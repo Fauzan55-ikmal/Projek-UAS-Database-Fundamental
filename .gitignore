@@ -1,0 +1,26 @@
+# --- Draw.io Temporary & Backup Files ---
+*drawio.bkp
+*drawio.bin
+.*.drawio.bkp
+.*.drawio.bin
+
+# --- Microsoft Office Temporary Files ---
+# Mengabaikan file sementara Word/Excel yang otomatis kebuat saat dokumen dibuka
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# --- OS System Files ---
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- VS Code & IDE Settings (Optional) ---
+# Un-comment baris di bawah kalau gamau setelan workspace VS Code pribadi lo ke-upload
+# .vscode/
