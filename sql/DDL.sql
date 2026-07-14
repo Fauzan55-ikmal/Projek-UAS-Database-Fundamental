@@ -17,3 +17,11 @@ CREATE TABLE armadas (
     capacity INT NOT NULL,
     status ENUM('active', 'maintenance', 'inactive') DEFAULT 'active'
 ) 
+
+-- Membuat Tabel Routes
+CREATE TABLE routes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    departure_city VARCHAR(50) NOT NULL,
+    arrival_city VARCHAR(50) NOT NULL,
+    duration TIME NOT NULL, -- Contoh: '02:30:00' artinya 2 jam 30 menit
+) 
