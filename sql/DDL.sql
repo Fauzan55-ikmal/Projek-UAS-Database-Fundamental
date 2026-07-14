@@ -25,3 +25,12 @@ CREATE TABLE routes (
     arrival_city VARCHAR(50) NOT NULL,
     duration TIME NOT NULL, -- Contoh: '02:30:00' artinya 2 jam 30 menit
 ) 
+
+-- Membuat Tabel Schedules
+CREATE TABLE schedules (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    departure_date DATE NOT NULL,
+    departure_time TIME NOT NULL,
+    price DECIMAL(10, 2) NOT NULL -- Harga dinamis menyesuaikan waktu operasional
+) 
+
