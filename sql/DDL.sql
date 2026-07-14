@@ -34,3 +34,11 @@ CREATE TABLE schedules (
     price DECIMAL(10, 2) NOT NULL -- Harga dinamis menyesuaikan waktu operasional
 ) 
 
+-- Membuat Tabel Bookings
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_code VARCHAR(12) UNIQUE NOT NULL, -- Kode unik transaksi di invoice
+    total_amount DECIMAL(10, 2) NOT NULL,
+    payment_status ENUM('pending', 'paid', 'cancelled') DEFAULT 'pending'
+) ENGINE=InnoDB;
+
