@@ -56,3 +56,13 @@ SELECT
     b.payment_status AS 'Status Pembayaran'
 FROM tickets AS t
 JOIN bookings AS b ON t.booking_id = b.id;
+
+-- 2. JOIN Tiket, Booking, dan Jadwal (3 Tabel)
+SELECT 
+    t.passenger_name AS 'Nama Penumpang',
+    b.booking_code AS 'Kode Booking',
+    s.departure_date AS 'Tanggal Pergi',
+    s.departure_time AS 'Jam Keberangkatan'
+FROM tickets AS t
+JOIN bookings AS b ON t.booking_id = b.id
+JOIN schedules AS s ON t.schedule_id = s.id; 
