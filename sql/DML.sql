@@ -39,3 +39,8 @@ WHERE booking_code = 'TRX-20260001';
 UPDATE schedules 
 SET price = price + 15000.00 
 WHERE id = 2;
+
+-- 3. DELETE DATA (Simulasi Pembatalan dengan Efek CASCADE)[cite: 1]
+-- Menghapus data booking otomatis menghapus tiket terkait[cite: 1]
+DELETE FROM bookings 
+WHERE booking_code = 'TRX-20260001';
