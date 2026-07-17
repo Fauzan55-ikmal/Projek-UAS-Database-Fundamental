@@ -44,3 +44,15 @@ WHERE id = 2;
 -- Menghapus data booking otomatis menghapus tiket terkait[cite: 1]
 DELETE FROM bookings 
 WHERE booking_code = 'TRX-20260001';
+
+-- =======================================================
+-- 4. READ DATA / REPORT (Simulasi JOIN & AS Alias)
+-- =======================================================
+
+-- 1. JOIN Tiket dengan Booking (2 Tabel)
+SELECT 
+    t.passenger_name AS 'Nama Penumpang',
+    b.booking_code AS 'Kode Booking',
+    b.payment_status AS 'Status Pembayaran'
+FROM tickets AS t
+JOIN bookings AS b ON t.booking_id = b.id;
