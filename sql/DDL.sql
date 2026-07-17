@@ -62,3 +62,11 @@ ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER payment_method;
 ALTER TABLE schedules 
 ADD COLUMN route_id INT NOT NULL AFTER id,
 ADD COLUMN armada_id INT NOT NULL AFTER route_id;
+
+-- 4. Menghubungkan Constraint Foreign Key[cite: 1]
+ALTER TABLE schedules
+ADD CONSTRAINT fk_schedules_routes FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+ADD CONSTRAINT fk_schedules_armadas FOREIGN KEY (armada_id) REFERENCES armadas(id) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE bookings
+ADD CONSTRAINT fk_bookings_customers FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE;
