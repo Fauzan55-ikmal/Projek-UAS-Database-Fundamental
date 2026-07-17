@@ -44,5 +44,5 @@ CREATE TABLE bookings (
     booking_code VARCHAR(12) UNIQUE NOT NULL, -- Kode unik transaksi di invoice
     total_amount DECIMAL(10, 2) NOT NULL,
     payment_status ENUM('pending', 'paid', 'cancelled') DEFAULT 'pending'
-) ENGINE=InnoDB;
+)
 
