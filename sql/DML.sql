@@ -28,3 +28,14 @@ INSERT INTO bookings (booking_code, customer_id, total_amount, payment_status, p
 INSERT INTO tickets (booking_id, schedule_id, passenger_name, passenger_id_card, seat_number) VALUES
 (1, 1, 'Septi', '3204123456780001', 5),
 (1, 1, 'Teman Septi', '3204123456780002', 6);
+
+-- 2. UPDATE DATA (Simulasi Perubahan Data)[cite: 1]
+-- Mengubah status pembayaran menjadi lunas[cite: 1]
+UPDATE bookings 
+SET payment_status = 'paid' 
+WHERE booking_code = 'TRX-20260001';
+
+-- Menyesuaikan harga tiket rute tertentu[cite: 1]
+UPDATE schedules 
+SET price = price + 15000.00 
+WHERE id = 2;
