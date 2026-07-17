@@ -41,3 +41,24 @@ CREATE TABLE bookings (
     total_amount DECIMAL(10, 2) NOT NULL,
     payment_status ENUM('pending', 'paid', 'cancelled') DEFAULT 'pending'
 );
+
+-- 3. Mengubah Struktur & Menambahkan Kolom Baru (ALTER TABLE)[cite: 1]
+ALTER TABLE customers 
+ADD COLUMN address TEXT NULL AFTER email, 
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER address;
+
+ALTER TABLE armadas 
+ADD COLUMN plate_number VARCHAR(15) UNIQUE NOT NULL AFTER id,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER status;
+
+ALTER TABLE routes 
+ADD COLUMN base_price DECIMAL(10, 2) NOT NULL AFTER duration;
+
+ALTER TABLE bookings 
+ADD COLUMN customer_id INT NOT NULL AFTER booking_code,
+ADD COLUMN payment_method VARCHAR(30) NULL AFTER payment_status,
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER payment_method;
+
+ALTER TABLE schedules 
+ADD COLUMN route_id INT NOT NULL AFTER id,
+ADD COLUMN armada_id INT NOT NULL AFTER route_id;
