@@ -13,3 +13,8 @@ DESCRIBE routes;
 DESCRIBE schedules;
 DESCRIBE bookings;
 DESCRIBE tickets;
+
+-- 3. Melihat Query Pembuatan Tabel (Constraint & Foreign Key)[cite: 1]
+SHOW CREATE TABLE schedules;
+SHOW CREATE TABLE bookings;
+SHOW CREATE TABLE tickets;
