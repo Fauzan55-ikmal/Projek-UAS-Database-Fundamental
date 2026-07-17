@@ -2,6 +2,10 @@
 -- DATABASE: SYSTEM TIKET TRAVEL
 -- ========================================================
 
+-- 1. Membuat Database (Opsional, sesuaikan dengan skema lo)
+CREATE DATABASE IF NOT EXISTS db_travel_kel2;
+USE db_travel_kel2;
+
 -- Membuat Tabel Customers
 CREATE TABLE customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
