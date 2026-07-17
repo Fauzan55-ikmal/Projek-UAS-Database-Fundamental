@@ -70,3 +70,15 @@ ADD CONSTRAINT fk_schedules_armadas FOREIGN KEY (armada_id) REFERENCES armadas(i
 
 ALTER TABLE bookings
 ADD CONSTRAINT fk_bookings_customers FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- 5. Membuat Tabel Transaksi Akhir (tickets)[cite: 1]
+CREATE TABLE tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT NOT NULL,
+    schedule_id INT NOT NULL,
+    passenger_name VARCHAR(100) NOT NULL,
+    passenger_id_card VARCHAR(20) NOT NULL,
+    seat_number INT NOT NULL,
+    CONSTRAINT fk_tickets_bookings FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_tickets_schedules FOREIGN KEY (schedule_id) REFERENCES schedules(id) ON DELETE RESTRICT ON UPDATE CASCADE
+);
