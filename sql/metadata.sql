@@ -18,3 +18,7 @@ DESCRIBE tickets;
 SHOW CREATE TABLE schedules;
 SHOW CREATE TABLE bookings;
 SHOW CREATE TABLE tickets;
+
+-- 4. Melihat Indeks yang Aktif di Tabel[cite: 1]
+SHOW INDEX FROM customers;
+SHOW INDEX FROM armadas;
