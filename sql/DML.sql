@@ -3,7 +3,7 @@
 -- =================================================================
 
 -- -----------------------------------------------------------------
--- 1. KONDISI AWAL BASIS DATA (INSERT AWAL - 3 DATA)
+-- 1. KONDISI AWAL BASIS DATA 
 -- -----------------------------------------------------------------
 
 -- Memasukkan 3 Data Master Pelanggan Awal
@@ -43,7 +43,7 @@ INSERT INTO tickets (booking_id, schedule_id, passenger_name, passenger_id_card,
 (2, 3, 'Udin Berlin', '3204987654320001', 3);
 
 -- -----------------------------------------------------------------
--- 2. TAHAP PEMBARUAN & PENAMBAHAN DATA (MEMENUHI SYARAT MINIMAL 5 DATA)
+-- 2. TAHAP PEMBARUAN & PENAMBAHAN DATA 
 -- -----------------------------------------------------------------
 
 -- Menambahkan data pelanggan ke-4 dan ke-5
@@ -78,33 +78,33 @@ INSERT INTO tickets (booking_id, schedule_id, passenger_name, passenger_id_card,
 (7, 2, 'Ranti', '3204998877660001', 2);
 
 -- -----------------------------------------------------------------
--- 3. TAHAP MANIPULASI INTERAKTIF (UPDATE & DELETE OPERASIONAL)
+-- 3. TAHAP MANIPULASI INTERAKTIF 
 -- -----------------------------------------------------------------
 
--- [UPDATE - Skenario 1]: Konfirmasi pembayaran kasir untuk booking awal
+-- Konfirmasi pembayaran kasir untuk booking awal
 UPDATE bookings 
 SET payment_status = 'paid' 
 WHERE booking_code = 'TRX-20260001';
 
--- [UPDATE - Skenario 2]: Penyesuaian tarif musiman/BBM naik Rp15.000 untuk Rute Yogyakarta (ID: 2)
+-- Penyesuaian tarif musiman/BBM naik Rp15.000 untuk Rute Yogyakarta (ID: 2)
 UPDATE schedules 
 SET price = price + 15000.00 
 WHERE route_id = 2;
 
--- [UPDATE - Skenario 3]: Perubahan status armada pasca-maintenance berkala selesai
+-- Perubahan status armada pasca-maintenance berkala selesai
 UPDATE armadas 
 SET status = 'active' 
 WHERE plate_number = 'D 9999 WT';
 
--- [UPDATE - Skenario 4]: Pelanggan melakukan update nomor HP baru di sistem
+-- Pelanggan melakukan update nomor HP baru di sistem
 UPDATE customers 
 SET phone = '081399998888' 
 WHERE name = 'Ranti';
 
--- [DELETE - Skenario 1]: Uji coba ON DELETE CASCADE (Batal booking otomatis hapus manifest tiket)
+-- Uji coba ON DELETE CASCADE (Batal booking otomatis hapus manifest tiket)
 DELETE FROM bookings 
 WHERE booking_code = 'TRX-20260003';
 
--- [DELETE - Skenario 2]: Uji coba ON DELETE RESTRICT (Proteksi rute agar tidak bisa dihapus jika jadwal aktif)
+-- Uji coba ON DELETE RESTRICT (Proteksi rute agar tidak bisa dihapus jika jadwal aktif)
 DELETE FROM routes 
 WHERE id = 4;
