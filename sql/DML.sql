@@ -8,9 +8,9 @@
 
 -- Memasukkan 3 Data Master Pelanggan Awal
 INSERT INTO customers (name, phone, email, address) VALUES
-('Septi', '081234567890', 'septi@tedc.ac.id', 'Cimahi, Bandung'),
-('Rizky', '082198765432', 'rizky@tedc.ac.id', 'Dago, Bandung'),
-('Rafael', '085711223344', 'rafael@tedc.ac.id', 'Lembang, Bandung');
+('Angga Saputra', '081234567890', 'angga_saputra@gmail.com', 'Cimahi, Bandung'),
+('Fauzan Fauzia Fauzi', '082198765432', 'fauzanfauziafauzi@gmail.com', 'Cililin, Bandung Barat'),
+('Udin Berlin', '085711223344', 'asepberlin12@tedc.ac.id', 'Lembang, Bandung');
 
 -- Memasukkan 3 Data Master Armada Awal
 INSERT INTO armadas (plate_number, model, capacity, status) VALUES
