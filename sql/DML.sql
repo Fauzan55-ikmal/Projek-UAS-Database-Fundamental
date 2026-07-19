@@ -7,34 +7,34 @@
 -- -----------------------------------------------------------------
 
 -- Memasukkan 3 Data Master Pelanggan Awal
-INSERT INTO customers (name, phone, email, address) VALUES
-('Angga Saputra', '081234567890', 'angga_saputra@gmail.com', 'Cimahi, Bandung'),
-('Fauzan Fauzia Fauzi', '082198765432', 'fauzanfauziafauzi@gmail.com', 'Cililin, Bandung Barat'),
-('Udin Berlin', '085711223344', 'asepberlin12@tedc.ac.id', 'Lembang, Bandung');
+INSERT INTO customers (name, phone, email) VALUES
+('Angga Saputra', '081234567890', 'angga_saputra@gmail.com'),
+('Fauzan Fauzia Fauzi', '082198765432', 'fauzanfauziafauzi@gmail.com'),
+('Udin Berlin', '085711223344', 'asepberlin12@tedc.ac.id');
 
 -- Memasukkan 3 Data Master Armada Awal
 INSERT INTO armadas (plate_number, model, capacity, status) VALUES
 ('D 1125 TED', 'Toyota Hiace', 14, 'active'),
 ('D 2025 CC', 'Isuzu Elf', 19, 'active'),
-('D 9999 WT', 'Toyota Hiace Premio', 11, 'maintenance');
+('D 9999 WT', 'Toyota Hiace Premio', 12, 'maintenance');
 
 -- Memasukkan 3 Data Master Rute Awal
 INSERT INTO routes (departure_city, arrival_city, duration, base_price) VALUES
-('Bandung', 'Jakarta', '02:30:00', 150000.00),
+('Bandung', 'Jakarta', '02:30:00', 200000.00),
 ('Bandung', 'Yogyakarta', '08:00:00', 350000.00),
 ('Bandung', 'Semarang', '06:30:00', 280000.00);
 
 -- Memasukkan 3 Data Jadwal Awal
 INSERT INTO schedules (route_id, armada_id, departure_date, departure_time, price) VALUES
 (1, 1, '2026-07-20', '07:00:00', 160000.00),
-(1, 2, '2026-07-20', '14:00:00', 160000.00),
-(2, 2, '2026-07-21', '08:00:00', 365000.00);
+(1, 2, '2026-07-20', '14:00:00', 325000.00),
+(2, 2, '2026-07-21', '08:00:00', 250000.00);
 
 -- Memasukkan 3 Data Booking Awal
 INSERT INTO bookings (booking_code, customer_id, total_amount, payment_status, payment_method) VALUES
-('TRX-20260001', 1, 320000.00, 'pending', 'QRIS'),
-('TRX-20260002', 2, 365000.00, 'paid', 'Transfer Bank'),
-('TRX-20260003', 3, 290000.00, 'pending', 'Cash');
+('TRX-20260001', 1, 160000.00, 'pending', 'QRIS'),
+('TRX-20260002', 2, 325000.00, 'paid', 'Transfer Bank'),
+('TRX-20260003', 3, 250000.00, 'paid', 'Cash');
 
 -- Memasukkan 3 Data Tiket Awal
 INSERT INTO tickets (booking_id, schedule_id, passenger_name, passenger_id_card, seat_number) VALUES
